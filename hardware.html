@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Team - Hexapod Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Floating Sidebar Toggle Button -->
+    <button id="floatingSidebarToggle" class="floating-sidebar-toggle" style="display: none;">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <h2>Hexapod Project</h2>
+                <button class="sidebar-toggle btn btn--secondary btn--sm">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar__user">
+                <div class="user-avatar">
+                    <i class="fas fa-cogs"></i> <!-- Icon for Hardware -->
+                </div>
+                <div class="user-info">
+                    <p>Hardware Team</p>
+                    <span class="status status--info">Active</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar__nav">
+                <ul>
+                    <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#teams"><i class="fas fa-users"></i> Teams</a></li>
+                    <li><a href="software.html"><i class="fas fa-code"></i> Software</a></li>
+                    <li><a href="electronics.html"><i class="fas fa-microchip"></i> Electronics</a></li>
+                    <li><a href="hardware.html" class="active"><i class="fas fa-cogs"></i> Hardware</a></li>
+                    <li><a href="index.html#timeline"><i class="fas fa-calendar"></i> Timeline</a></li>
+                    <li><a href="index.html#processors"><i class="fas fa-microchip"></i> Processors</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="hardware-dashboard" class="page">
+                <div class="page-header">
+                    <h1>Hardware Design & Manufacturing Resources</h1>
+                    <p class="subtitle">Comprehensive mechanical and fabrication resources for hexapod robot development in India</p>
+                </div>
+
+                <!-- Core Technical Documentation -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3><i class="fas fa-cogs"></i> Core Technical Documentation</h3>
+                    </div>
+                    <div class="card__body">
+                        <!-- Add Resource Button for Core Technical Documentation -->
+                        <button class="btn btn--primary btn--sm mb-2" onclick="addResource('core-docs')">
+                            <i class="fas fa-plus"></i> Add Resource
+                        </button>
+                        <div class="resource-table-container data-table">
+                            <table class="resource-table" id="core-docs-table">
+                                <thead>
+                                    <tr>
+                                        <th>Component/Material</th>
+                                        <th>Type</th>
+                                        <th>India Pricing & Specifications</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="core-docs-tbody">
+                                    <tr>
+                                        <td><a href="https://www.towerpro.com.tw/product/mg996r/" target="_blank">TowerPro MG996R Servo</a></td>
+                                        <td>High-Torque Servo</td>
+                                        <td>₹350-₹450 each, 15kg-cm torque, metal gears, 18 required</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('core-docs', 0)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('core-docs', 0)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.makerstore.com.au/aluminum-brackets" target="_blank">Aluminum L-Brackets & Joints</a></td>
+                                        <td>Structural Components</td>
+                                        <td>₹15-₹45 per piece, 6061-T6 aluminum, lightweight and strong</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('core-docs', 1)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('core-docs', 1)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://components101.com/motors/mg90s-servo-motor" target="_blank">MG90S Micro Servo Motors</a></td>
+                                        <td>Precision Actuators</td>
+                                        <td>₹180-₹220 each, 2.5kg-cm torque, compact design</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('core-docs', 2)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('core-docs', 2)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer" target="_blank">Carbon Fiber Sheets</a></td>
+                                        <td>Advanced Materials</td>
+                                        <td>₹800-₹1,200 per sq ft, high strength-to-weight ratio</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('core-docs', 3)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('core-docs', 3)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Papers -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3><i class="fas fa-graduation-cap"></i> Mechanical Design Research</h3>
+                    </div>
+                    <div class="card__body">
+                        <!-- Add Resource Button for Research Papers -->
+                        <button class="btn btn--primary btn--sm mb-2" onclick="addResource('research')">
+                            <i class="fas fa-plus"></i> Add Resource
+                        </button>
+                        <div class="resource-table-container data-table">
+                            <table class="resource-table" id="research-table">
+                                <thead>
+                                    <tr>
+                                        <th>Research Paper</th>
+                                        <th>Focus Area</th>
+                                        <th>Application to Hexapod Design</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="research-tbody">
+                                    <tr>
+                                        <td><a href="https://ieeexplore.ieee.org/hexapod-kinematics" target="_blank">Hexapod Robot Kinematics and Dynamics</a></td>
+                                        <td>Mechanical Analysis</td>
+                                        <td>Leg configuration optimization and joint placement</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('research', 0)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('research', 0)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.sciencedirect.com/bio-inspired-design" target="_blank">Bio-inspired Mechanical Design Principles</a></td>
+                                        <td>Biomechanics</td>
+                                        <td>Insect-inspired joint mechanisms and leg structures</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('research', 1)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('research', 1)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://journals.asm.org/additive-manufacturing" target="_blank">3D Printing for Robotics Applications</a></td>
+                                        <td>Manufacturing</td>
+                                        <td>Custom joint designs and lightweight frame components</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('research', 2)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('research', 2)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaborative Tools -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3><i class="fas fa-drafting-compass"></i> CAD & Design Tools</h3>
+                    </div>
+                    <div class="card__body">
+                        <!-- Add Resource Button for Collaborative Tools -->
+                        <button class="btn btn--primary btn--sm mb-2" onclick="addResource('collab')">
+                            <i class="fas fa-plus"></i> Add Resource
+                        </button>
+                        <div class="resource-table-container data-table">
+                            <table class="resource-table" id="collab-table">
+                                <thead>
+                                    <tr>
+                                        <th>Software/Tool</th>
+                                        <th>Purpose</th>
+                                        <th>India Pricing & Accessibility</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="collab-tbody">
+                                    <tr>
+                                        <td><a href="https://www.autodesk.com/products/fusion-360" target="_blank">Autodesk Fusion 360</a></td>
+                                        <td>3D CAD & Simulation</td>
+                                        <td>₹4,200/month, free for students and startups</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('collab', 0)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('collab', 0)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.solidworks.com/" target="_blank">SolidWorks</a></td>
+                                        <td>Professional CAD</td>
+                                        <td>₹3,50,000/license, student versions at 90% discount</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('collab', 1)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('collab', 1)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.freecadweb.org/" target="_blank">FreeCAD</a></td>
+                                        <td>Open Source CAD</td>
+                                        <td>Completely free, active Indian community support</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('collab', 2)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('collab', 2)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.tinkercad.com/" target="_blank">Tinkercad</a></td>
+                                        <td>Beginner 3D Design</td>
+                                        <td>Free browser-based, perfect for rapid prototyping</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('collab', 3)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('collab', 3)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Learning Paths -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3><i class="fas fa-route"></i> Mechanical Design Learning Paths</h3>
+                    </div>
+                    <div class="card__body">
+                        <!-- Add Resource Button for Key Learning Paths -->
+                        <button class="btn btn--primary btn--sm mb-2" onclick="addResource('learning')">
+                            <i class="fas fa-plus"></i> Add Resource
+                        </button>
+                        <div class="resource-table-container data-table">
+                            <table class="resource-table" id="learning-table">
+                                <thead>
+                                    <tr>
+                                        <th>Course/Resource</th>
+                                        <th>Level</th>
+                                        <th>Duration & Cost (INR)</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="learning-tbody">
+                                    <tr>
+                                        <td><a href="https://www.coursera.org/learn/mechanical-design" target="_blank">Mechanical Design Fundamentals</a></td>
+                                        <td>Beginner</td>
+                                        <td>3-4 months, ₹3,900/month Coursera subscription</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('learning', 0)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('learning', 0)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.udemy.com/course/fusion360-cad/" target="_blank">Fusion 360 Complete Course</a></td>
+                                        <td>Intermediate</td>
+                                        <td>2-3 months, ₹1,200 one-time (regular sales)</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('learning', 1)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('learning', 1)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.edx.org/course/robotics-mechanics" target="_blank">Robotics Mechanics & Dynamics</a></td>
+                                        <td>Advanced</td>
+                                        <td>5-6 months, ₹8,500 verified certificate</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('learning', 2)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('learning', 2)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vendor-Specific Resources -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3><i class="fas fa-industry"></i> Manufacturing & Fabrication Vendors (India)</h3>
+                    </div>
+                    <div class="card__body">
+                        <!-- Add Resource Button for Vendor-Specific Resources -->
+                        <button class="btn btn--primary btn--sm mb-2" onclick="addResource('vendor')">
+                            <i class="fas fa-plus"></i> Add Resource
+                        </button>
+                        <div class="resource-table-container data-table">
+                            <table class="resource-table" id="vendor-table">
+                                <thead>
+                                    <tr>
+                                        <th>Vendor/Service</th>
+                                        <th>Specialization</th>
+                                        <th>Location & Pricing</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="vendor-tbody">
+                                    <tr>
+                                        <td><a href="https://www.3ding.in/" target="_blank">3Ding</a></td>
+                                        <td>3D Printing Services</td>
+                                        <td>Mumbai/Delhi, ₹8-₹15 per gram PLA, 2-3 days turnaround</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('vendor', 0)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('vendor', 0)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.fabheads.com/" target="_blank">FabHeads</a></td>
+                                        <td>CNC Machining & Fabrication</td>
+                                        <td>Bangalore, custom quotes, aluminum/steel machining</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('vendor', 1)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('vendor', 1)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.thinkrob.com/" target="_blank">ThinkRob</a></td>
+                                        <td>Robotics Components & Kits</td>
+                                        <td>Pan-India, servo motors, brackets, sensors</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('vendor', 2)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('vendor', 2)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="https://www.lasercut.in/" target="_blank">LaserCut.in</a></td>
+                                        <td>Laser Cutting Services</td>
+                                        <td>Multiple cities, acrylic/wood cutting, ₹50-₹200 setup</td>
+                                        <td class="resource-actions">
+                                            <button class="btn-icon" onclick="editResource('vendor', 3)"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon btn-danger" onclick="deleteResource('vendor', 3)"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Members Section -->
+                <div class="card">
+                    <div class="card__header">
+                        <h3><i class="fas fa-users"></i> Hardware Team Members</h3>
+                        <button class="btn btn--primary btn--sm" onclick="addTeamMember('hardware')">
+                            <i class="fas fa-plus"></i> Add Member
+                        </button>
+                        <p class="subtitle">Meet our dedicated hardware design and manufacturing team</p>
+                    </div>
+                    <div class="card__body">
+                        <div id="hardwareTeamMembers" class="team-members-grid">
+                            <!-- Dynamic team members will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/resource-manager.js"></script>
+</body>
+</html>
